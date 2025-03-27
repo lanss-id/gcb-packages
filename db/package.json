@@ -1,0 +1,30 @@
+{
+  "name": "@gcb/db",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:push": "tsx src/drizzle/migrate.ts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.27.0",
+    "pg": "^8.11.1",
+    "@neondatabase/serverless": "^0.5.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.19.12",
+    "typescript": "^5.0.4",
+    "@types/node": "^18.16.0",
+    "@types/pg": "^8.10.2",
+    "tsx": "^3.12.7",
+    "tsup": "^7.1.0"
+  }
+}
